@@ -3,6 +3,7 @@ import java.io.*;
 public class Mudah_1 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("==== Program Untuk Menentukan Bentuk Segitiga ===");
 
         int angka1 = 0, angka2 = 0, angka3 = 0;
 
@@ -13,6 +14,8 @@ public class Mudah_1 {
         System.out.print("Masukkan Panjang Sisi Ketiga : ");
         angka3 = Integer.parseInt(br.readLine());
 
+        System.out.println("");
+        System.out.println("=== Hasil ===");
         if (angka1 == angka2 && angka2 != angka3 && angka1 != angka3
                 || angka2 == angka3 && angka2 != angka1 && angka1 != angka3
                 || angka1 == angka3 && angka2 != angka1 && angka2 != angka3) {
