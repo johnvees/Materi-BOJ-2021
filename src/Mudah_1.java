@@ -1,42 +1,27 @@
 import java.io.*;
 
 public class Mudah_1 {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("=== Program Untuk Menentukan Bilangan Terbesar, Terkecil, dan Rata-rata ===");
-        System.out.println("");
 
-        System.out.print("Masukkan banyak bilangan yang akan diinput: ");
-        int banyakBilangan = Integer.parseInt(br.readLine());
-        int angka[] = new int[banyakBilangan];
-        int terkecil, terbesar;
-        double finalAverage, average = 0;
+        int angka1 = 0, angka2 = 0, angka3 = 0;
 
-        for (int i = 0; i < banyakBilangan; i++) {
-            System.out.print("Masukkan Bilangan ke-" + i + " : ");
-            angka[i] = Integer.parseInt(br.readLine());
+        System.out.print("Masukkan Panjang Sisi Pertama : ");
+        angka1 = Integer.parseInt(br.readLine());
+        System.out.print("Masukkan Panjang Sisi Kedua : ");
+        angka2 = Integer.parseInt(br.readLine());
+        System.out.print("Masukkan Panjang Sisi Ketiga : ");
+        angka3 = Integer.parseInt(br.readLine());
+
+        if (angka1 == angka2 && angka2 != angka3 && angka1 != angka3
+                || angka2 == angka3 && angka2 != angka1 && angka1 != angka3
+                || angka1 == angka3 && angka2 != angka1 && angka2 != angka3) {
+            System.out.println("Hasil Inputan Anda adalah Segitiga Sama Kaki");
+        } else if (angka1 == angka2 || angka1 == angka3 || angka2 == angka3) {
+            System.out.println("Hasil Inputan Anda adalah Segitiga Sama Sisi");
+        } else {
+            System.out.println("Hasil Inputan Anda adalah Segitiga Sembarang");
         }
 
-        terkecil = angka[0];
-        terbesar = angka[0];
-
-        for (int i = 0; i < banyakBilangan; i++) {
-            if (angka[i] < terkecil) {
-                terkecil = angka[i];
-            } else if (angka[i] > terbesar) {
-                terbesar = angka[i];
-            }
-        }
-
-        for (int i = 0; i < banyakBilangan; i++) {
-            average = average + angka[i];
-        }
-
-        finalAverage = average / banyakBilangan;
-        System.out.println("");
-        System.out.println("=== Hasil Perhitungan ===");
-        System.out.println("Bilangan Terkecil: " + terkecil);
-        System.out.println("Bilangan Terbesar: " + terbesar);
-        System.out.println("Hasil Rata-Rata dari ke-" + banyakBilangan + " bilangan adalah: " + finalAverage);
     }
 }
